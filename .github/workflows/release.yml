@@ -42,7 +42,7 @@ jobs:
       # ------------------------------------------------------------
       - name: Package Addon
         run: |
-          ./packager.sh -g retail -u -e -v "${{ steps.version.outputs.version }}"
+          ./packager.sh -g retail -u
 
       # ------------------------------------------------------------
       # 5. Upload to CurseForge
