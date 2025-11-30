@@ -1,6 +1,6 @@
 ## Interface: 120000
 ## Title: |cFF00FF00Midnight World-Markers|r
-## Notes: Vendored Ace3-like minimal libs included for standalone operation.
+## Notes:  Midnight world marker cycler
 ## Author: Keltharan
 ## Version: 1.0.0
 ## SavedVariables: MidnightWorldMarkers_DB
