@@ -5,6 +5,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write  # REQUIRED for releases
+
 jobs:
   release:
     name: Build & Release
