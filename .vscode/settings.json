@@ -1,0 +1,15 @@
+{
+    "Lua.diagnostics.globals": [
+        "LibStub",
+        "SecureHandlerUnwrapScript",
+        "SecureHandlerExecute",
+        "SecureHandlerWrapScript",
+        "ClearOverrideBindings",
+        "SetOverrideBindingClick",
+        "CreateFrame",
+        "DEFAULT_CHAT_FRAME",
+        "SlashCmdList",
+        "InterfaceOptionsFrame_OpenToCategory",
+        "ReloadUI"
+    ]
+}

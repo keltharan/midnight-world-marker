@@ -1,0 +1,78 @@
+name: Release Addon
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: Build & Release
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------------------------
+      # 1. Checkout repository
+      # ------------------------------------------------------------
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ------------------------------------------------------------
+      # 2. Read version from tag (v1.0.4 → 1.0.4)
+      # ------------------------------------------------------------
+      - name: Extract version
+        id: version
+        run: |
+          RAW="${GITHUB_REF##*/}"
+          CLEAN="${RAW#v}"
+          echo "version=$CLEAN" >> $GITHUB_OUTPUT
+
+      # ------------------------------------------------------------
+      # 3. Install BigWigs Packager
+      # ------------------------------------------------------------
+      - name: Install BigWigs Packager
+        run: |
+          curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh > packager.sh
+          chmod +x packager.sh
+
+      # ------------------------------------------------------------
+      # 4. Run packager (creates Curse-ready zip)
+      # ------------------------------------------------------------
+      - name: Package Addon
+        run: |
+          ./packager.sh -g retail -u -e -v "${{ steps.version.outputs.version }}"
+
+      # ------------------------------------------------------------
+      # 5. Upload to CurseForge
+      # ------------------------------------------------------------
+      - name: Upload to CurseForge
+        uses: BigWigsMods/packager@master
+        env:
+          CF_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+
+      # ------------------------------------------------------------
+      # 6. Upload to Wago.io
+      # ------------------------------------------------------------
+      # - name: Upload to Wago.io
+      #   uses: wagoautomation/wago-release@v1
+      #   with:
+      #     api-token: ${{ secrets.WAGO_API_KEY }}
+      #     package-path: ".release/"
+      #     package-type: "addon"
+      #     display-name: "MidnightWorldMarkers"
+      #     version: "${{ steps.version.outputs.version }}"
+      #     changelog: "CHANGELOG.md"
+# 
+      # ------------------------------------------------------------
+      # 7. Upload packaged addon as a GitHub Release
+      # ------------------------------------------------------------
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "Release ${{ steps.version.outputs.version }}"
+          body_path: CHANGELOG.md
+          files: |
+            .release/*.zip

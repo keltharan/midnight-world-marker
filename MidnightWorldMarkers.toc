@@ -1,0 +1,52 @@
+## Interface: 120000
+## Title: |cFF00FF00Midnight World-Markers|r
+## Notes: Vendored Ace3-like minimal libs included for standalone operation.
+## Author: Keltharan
+## Version: 1.0.0
+## SavedVariables: MidnightWorldMarkers_DB
+## OptionalDeps: Ace3, LibSharedMedia-3.0
+## IconTexture: Interface\AddOns\MidnightWorldMarkers\Media\icon.tga
+
+# Core library bootstrap
+Libs\LibStub\LibStub.lua
+#Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+
+# Media & utility libraries
+Libs\LibDataBroker-1.1.lua
+Libs\LibDBIcon-1.0\lib.xml
+Libs\LibDeflate\LibDeflate.lua
+Libs\LibDualSpec-1.0\LibDualSpec-1.0.lua
+
+# Ace3 libraries
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+Libs\AceEvent-3.0\AceEvent-3.0.xml
+Libs\AceConsole-3.0\AceConsole-3.0.xml
+Libs\AceHook-3.0\AceHook-3.0.xml
+Libs\AceLocale-3.0\AceLocale-3.0.xml
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\AceConfig-3.0\AceConfig-3.0.xml
+Libs\AceSerializer-3.0\AceSerializer-3.0.xml
+
+# Main
+MidnightWorldMarkers.lua
+
+# Widgets
+Widgets\HotkeyModifierWidget.lua
+Widgets\KeyCapturePopup.lua
+
+# Options
+Options\Config.lua
+Options\Profile.lua
+Options\Options.lua
+
+# Core
+Core\Logger.lua
+Core\Constants.lua
+Core\Core.lua
+
+# Utils
+Util\Utils.lua
+
+Minimap.lua
