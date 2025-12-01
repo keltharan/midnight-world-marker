@@ -45,7 +45,7 @@ embedded-libraries:
   - AceDB-3.0
   - AceDBOptions-3.0
   - AceGUI-3.0
-  - AceConfig-3.0 
+  #- AceConfig-3.0 
 
 enable-nolib-creation: no
 tools-used:
