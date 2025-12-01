@@ -48,5 +48,3 @@ ignore:
 #  #- AceConfig-3.0 
 
 enable-nolib-creation: no
-tools-used:
-  - bigwigs-packager
