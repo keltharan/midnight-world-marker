@@ -1,3 +1,6 @@
+## Version 1.0.18-alpha
+- fix non-save of profile caused to addon renaming with spaces
+
 ## Version 1.0.17-alpha
 - moving logger from minimap to commandline (will be removed until end of midnight beta)
 

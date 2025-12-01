@@ -18,7 +18,7 @@ function MwMarkers:OnInitialize()
       error(ADDON_NAME..": Defaults not loaded! Make sure Core/Constants.lua is loaded before "..ADDON_NAME..".lua")
   end
 
-  self.db = LibStub("AceDB-3.0"):New(ADDON_NAME.."_DB", defaults, true)
+  self.db = LibStub("AceDB-3.0"):New(ADDON_NAME:gsub("%s+", "").."_DB", defaults, true)
   ns.db = self.db
 
   self.db.RegisterCallback(self, "OnProfileChanged", "OnProfileChanged")
@@ -27,7 +27,7 @@ function MwMarkers:OnInitialize()
 
   -- Enhance database with LibDualSpec if available
   if LibDualSpec then
-      LibDualSpec:EnhanceDatabase(self.db, ADDON_NAME.."_DB")
+      LibDualSpec:EnhanceDatabase(self.db, ADDON_NAME:gsub("%s+", "").."_DB")
   end
   
   -- Register chat commands
