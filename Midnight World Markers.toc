@@ -2,7 +2,8 @@
 ## Title: |cFF00FF00Midnight World-Markers|r
 ## Notes:  Midnight world marker cycler
 ## Author: Keltharan
-## Version: 1.0.0
+## Version: 1.0.11
+## X-Curse-Project-ID: 1395391
 ## SavedVariables: MidnightWorldMarkers_DB
 ## OptionalDeps: Ace3, LibSharedMedia-3.0
 ## IconTexture: Interface\AddOns\MidnightWorldMarkers\Media\icon.tga
