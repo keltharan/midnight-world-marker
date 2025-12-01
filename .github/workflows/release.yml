@@ -54,6 +54,7 @@ jobs:
         uses: BigWigsMods/packager@master
         env:
           CF_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+          CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
 
       # ------------------------------------------------------------
       # 6. Upload to Wago.io
