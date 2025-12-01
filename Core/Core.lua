@@ -8,14 +8,6 @@ end
 
 _G['MW_Core'] = MwMarkers.Core
 
-function MwMarkers.Core:NextMark()
-    local action = 'place'
-    local x = (self.db.profile[action].modifier ~= "NONE" and (self.db.profile[action].modifier .. "-") or "");
-    local m = ( x .. (self.db.profile[action].key or ""))
-    if m then DEFAULT_CHAT_FRAME:AddMessage('hello world ' .. m)
-    else DEFAULT_CHAT_FRAME:AddMessage('hello world (no markers selected)') end
-end
-
 function MwMarkers.Core:Refresh()
     local button = _G["MW_Core_MarkerCycler"]
     if not button then
