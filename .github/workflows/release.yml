@@ -48,11 +48,13 @@ jobs:
           ./packager.sh -g retail -u -p ${{ secrets.CF_PROJECT_ID }}
 
       # ------------------------------------------------------------
-      # 5. Upload to CurseForge
+      # 5. Create Package
       # ------------------------------------------------------------
-      - name: Upload to CurseForge
+      - name: Create Package
         uses: BigWigsMods/packager@v2
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
           CF_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
           CF_PROJECT_ID: ${{ secrets.CF_PROJECT_ID }}
 
