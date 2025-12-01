@@ -30,7 +30,6 @@ function MwMarkers.Options:SaveOptions()
   if MwMarkers.Core then
     MwMarkers.Core:Refresh()
   end
-  
 end
 
 function MwMarkers.Options:Init()

@@ -28,11 +28,7 @@ function  MwMarkers.Minimap:Init()
       icon = "Interface\\AddOns\\MidnightWorldMarkers\\Media\\icon.tga",
       label = MwMarkers.Const.Text.ADDON_R_NAME,
       OnClick = function(_, button)
-          if button == "LeftButton" then
-            if _G.Logger then
-              _G.Logger:Toggle()
-            end
-          elseif button == "RightButton" then
+          if button == "LeftButton" or button == "RightButton" then
               -- Right click could toggle something or show a menu
               -- For now, just open config
               if MwMarkers.Options and MwMarkers.Options.OpenConfig then MwMarkers.Options:OpenConfig()

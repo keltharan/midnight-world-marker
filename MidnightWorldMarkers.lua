@@ -33,8 +33,16 @@ function MwMarkers:OnInitialize()
   -- Register chat commands
   self:RegisterChatCommand("mwm", "OpenConfig")
   self:RegisterChatCommand("mwmarkers", "OpenConfig")
+  self:RegisterChatCommand("mwm-logger", "OpenLogger")
 
   self:OnLoaded(defaults)
+end
+
+
+function MwMarkers:OpenLogger()
+  if _G.Logger then
+    _G.Logger:Toggle()
+  end
 end
 
 function MwMarkers:OpenConfig()
